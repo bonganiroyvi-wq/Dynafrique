@@ -62,8 +62,8 @@
         </div>
 
         <!-- Solar form -->
-        <form id="solarForm" class="serviceForm" data-service="solar">
-          <input type="hidden" name="_form" value="solar-quote">
+        <form name="solar-quote" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="solar-quote">
           <label for="s_name">Full Name</label>
           <input id="s_name" name="name" type="text" required placeholder="Thabo Mokoena">
 
@@ -99,8 +99,8 @@
         </form>
 
         <!-- Fuel form -->
-        <form id="fuelForm" class="serviceForm" data-service="fuel" style="display:none;margin-top:14px">
-          <input type="hidden" name="_form" value="fuel-quote">
+        <form name="fuel-quote" method="POST" data-netlify="true" style="display:none;margin-top:14px">
+          <input type="hidden" name="form-name" value="fuel-quote">
           <label for="f_name">Full Name & Company</label>
           <input id="f_name" name="name" type="text" required placeholder="Thabo Mokoena — Mokoena Transport">
 
@@ -142,9 +142,7 @@
 
         <div class="divider"></div>
 
-        <div class="small">Pro tip: Start local — test ads in Sabie first. When you receive leads, verify rapidly via WhatsApp before connecting to suppliers.</div>
-      </div>
-
+       
       <!-- Right: quick info -->
       <aside class="right">
         <div class="card">
@@ -199,9 +197,7 @@
     // This is the simplest setup to get live submissions without server code.
     // Steps: 1) Sign up at https://formspree.io and create a form. 2) Replace 'YOUR_FORMSPREE_ENDPOINT' with your Formspree endpoint below.
 
-    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT' // <-- replace this with your Formspree endpoint
-
-    async function handleSubmit(e){
+   
       e.preventDefault()
       const form = e.target
       const data = new FormData(form)
@@ -240,3 +236,4 @@
   </script>
 </body>
 </html>
+
