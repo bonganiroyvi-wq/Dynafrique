@@ -1,113 +1,77 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Request a Quote — Dynafrique</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request a Quote | Dynafrique Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="scripts.js" defer></script>
 </head>
 <body>
-  <header class="mini-header">
-    <div class="container">
-      <a href="index.html" class="brand-mini">Dynafrique</a>
-    </div>
+  <header>
+    <h1>Request a Quote</h1>
+    <p>Tell us what you need and we’ll connect you with trusted suppliers</p>
   </header>
 
-  <main class="container form-page">
-    <div class="wizard-card">
-      <h2>Request a Quote</h2>
-      <p class="small">Quick — we only ask what suppliers need to give a reliable quote.</p>
+  <main class="container">
+    <form name="quote-form" method="POST" data-netlify="true" action="thank-you.html">
+      <input type="hidden" name="form-name" value="quote-form">
 
-      <!-- Stepper UI -->
-      <div id="stepper" class="stepper">
-        <div class="stepper-step active" data-step="1">Service</div>
-        <div class="stepper-step" data-step="2">Details</div>
-        <div class="stepper-step" data-step="3">Contact</div>
+      <!-- Stepper -->
+      <div class="stepper">
+        <div class="step active" id="step-1-label">Service</div>
+        <div class="step" id="step-2-label">Location</div>
+        <div class="step" id="step-3-label">Details</div>
+        <div class="step" id="step-4-label">Contact</div>
       </div>
 
-      <!-- FORM - Netlify will capture it, redirect to thank-you.html -->
-      <form id="quoteForm" name="quote-request" method="POST" data-netlify="true" action="thank-you.html">
-        <input type="hidden" name="form-name" value="quote-request">
+      <!-- Step 1 -->
+      <div class="form-step active">
+        <label for="service">Which service do you need?</label>
+        <select name="service" id="service" required>
+          <option value="">Select...</option>
+          <option value="Solar">Solar</option>
+          <option value="Fuel">Fuel</option>
+        </select>
+        <button type="button" class="btn next-step">Next</button>
+      </div>
 
-        <!-- STEP 1 -->
-        <fieldset class="step active" data-step="1">
-          <label class="label">Which service do you need?</label>
-          <div class="radio-row">
-            <label class="radio">
-              <input type="radio" name="service" value="Solar" required> Solar (Residential / Commercial)
-            </label>
-            <label class="radio">
-              <input type="radio" name="service" value="Fuel" required> Bulk Fuel (Diesel / Petrol)
-            </label>
-          </div>
-          <div class="actions">
-            <button type="button" class="btn ghost" id="next1">Next</button>
-          </div>
-        </fieldset>
+      <!-- Step 2 -->
+      <div class="form-step">
+        <label for="location">Where are you located?</label>
+        <input type="text" name="location" id="location" placeholder="e.g. Sabie, Mpumalanga" required />
+        <button type="button" class="btn prev-step">Back</button>
+        <button type="button" class="btn next-step">Next</button>
+      </div>
 
-        <!-- STEP 2 -->
-        <fieldset class="step" data-step="2">
-          <div id="solarFields" style="display:none">
-            <label>Average monthly Eskom bill (R)</label>
-            <select name="solar_bill">
-              <option value="">-- Select --</option>
-              <option>Under R1,000</option>
-              <option>R1,000 - R2,500</option>
-              <option>R2,500 - R5,000</option>
-              <option>Above R5,000</option>
-            </select>
-            <label>Do you own the property?</label>
-            <select name="solar_owner">
-              <option value="">-- Select --</option>
-              <option>Yes</option>
-              <option>No</option>
-            </select>
-          </div>
+      <!-- Step 3 -->
+      <div class="form-step">
+        <label for="details">Tell us more about your needs</label>
+        <textarea name="details" id="details" rows="4" placeholder="e.g. Need solar for a 3-bedroom house" required></textarea>
+        <button type="button" class="btn prev-step">Back</button>
+        <button type="button" class="btn next-step">Next</button>
+      </div>
 
-          <div id="fuelFields" style="display:none">
-            <label>Type of fuel</label>
-            <select name="fuel_type">
-              <option value="">-- Select --</option>
-              <option>Diesel</option>
-              <option>Petrol</option>
-              <option>Both</option>
-            </select>
-            <label>Estimated Monthly Volume (litres)</label>
-            <input type="number" name="fuel_volume" min="1" placeholder="e.g., 20000">
-          </div>
+      <!-- Step 4 -->
+      <div class="form-step">
+        <label for="name">Your Name</label>
+        <input type="text" name="name" id="name" required />
 
-          <div class="actions">
-            <button type="button" class="btn ghost" id="prev2">Back</button>
-            <button type="button" class="btn primary" id="next2">Next</button>
-          </div>
-        </fieldset>
+        <label for="email">Your Email</label>
+        <input type="email" name="email" id="email" required />
 
-        <!-- STEP 3 -->
-        <fieldset class="step" data-step="3">
-          <label>Full name</label>
-          <input type="text" name="name" required placeholder="Thabo Mokoena">
+        <label for="phone">Your Phone</label>
+        <input type="tel" name="phone" id="phone" required />
 
-          <label>Company (optional)</label>
-          <input type="text" name="company" placeholder="Company name">
-
-          <label>Phone / WhatsApp</label>
-          <input type="text" name="phone" required placeholder="+27 82 555 1234">
-
-          <label>Location (Town/Suburb)</label>
-          <input type="text" name="location" required placeholder="Sabie">
-
-          <label>Additional details (optional)</label>
-          <textarea name="notes" placeholder="Any details suppliers should know"></textarea>
-
-          <div class="actions">
-            <button type="button" class="btn ghost" id="prev3">Back</button>
-            <button type="submit" class="btn primary">Submit Request</button>
-          </div>
-        </fieldset>
-      </form>
-    </div>
+        <button type="button" class="btn prev-step">Back</button>
+        <button type="submit" class="btn">Submit Request</button>
+      </div>
+    </form>
   </main>
 
-  <script src="scripts.js" defer></script>
+  <footer>
+    <p>&copy; 2025 Dynafrique Solutions</p>
+  </footer>
 </body>
 </html>
+
