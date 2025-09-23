@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Supplier Signup — Dynafrique</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="mini-header">
+    <div class="container">
+      <a href="index.html" class="brand-mini">Dynafrique</a>
+    </div>
+  </header>
+
+  <main class="container form-page">
+    <div class="wizard-card">
+      <h2>Supplier Registration</h2>
+      <p class="small">Register to receive verified quote requests from buyers in Mpumalanga.</p>
+
+      <form name="supplier-signup" method="POST" data-netlify="true" action="thank-you.html">
+        <input type="hidden" name="form-name" value="supplier-signup">
+        <label>Company Name</label>
+        <input type="text" name="company" required>
+        <label>Contact person</label>
+        <input type="text" name="contact_name" required>
+        <label>Phone / WhatsApp</label>
+        <input type="text" name="contact_phone" required>
+        <label>Email</label>
+        <input type="email" name="contact_email" required>
+        <label>Services (check all)</label>
+        <div class="checkbox-row">
+          <label><input type="checkbox" name="services" value="residential_solar"> Residential Solar</label>
+          <label><input type="checkbox" name="services" value="commercial_solar"> Commercial Solar</label>
+          <label><input type="checkbox" name="services" value="bulk_fuel"> Bulk Fuel</label>
+        </div>
+        <label>Service areas (towns)</label>
+        <input type="text" name="areas" placeholder="Sabie, Nelspruit...">
+        <label>Notes (capacity, licenses, payment terms)</label>
+        <textarea name="supplier_notes"></textarea>
+
+        <div class="actions">
+          <button type="submit" class="btn primary">Register</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script src="scripts.js" defer></script>
+</body>
+</html>
