@@ -3,247 +3,133 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dynafrique Solutions — Solar & Fuel Quotes</title>
-  <meta name="description" content="Dynafrique Solutions — connecting buyers with trusted solar installers and bulk fuel suppliers in Mpumalanga." />
-  <style>
-    :root{
-      --bg:#0f1724;
-      --card:#0b1220;
-      --accent:#f6b800;
-      --muted:#9aa4b2;
-      --glass:rgba(255,255,255,0.04);
-    }
-    *{box-sizing:border-box}
-    body{
-      font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      margin:0;
-      background-color:var(--bg);
-      color:#e6eef6;
-      line-height:1.45;
-      /* solar panel grid effect */
-      background-image:linear-gradient(#1a2436 1px, transparent 1px), linear-gradient(90deg, #1a2436 1px, transparent 1px);
-      background-size:60px 60px;
-    }
-    .wrap{max-width:980px;margin:28px auto;padding:22px}
-    header{display:flex;align-items:center;gap:18px}
-    .logo{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,#f6b800,#ffde7a);display:flex;align-items:center;justify-content:center;color:#071024;font-weight:700;font-size:20px}
-    h1{margin:0;font-size:22px}
-    p.lead{color:var(--muted);margin:6px 0 18px}
-    .grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
-    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
-    .big{padding:26px}
-    .section-title{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-    .section-title h2{margin:0;font-size:18px}
-    label{display:block;font-size:14px;color:#fff;margin:8px 0 6px;font-weight:500}
-    input[type=text],input[type=email],select,input[type=number],textarea{
-      width:100%;
-      padding:12px;
-      border-radius:8px;
-      border:1px solid rgba(255,255,255,0.08);
-      background:rgba(255,255,255,0.05);
-      color:inherit;
-      font-size:14px;
-    }
-    select{
-      background-color:#142033;
-      font-weight:500;
-      color:#e6eef6;
-    }
-    textarea{min-height:110px}
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      background:var(--accent);
-      color:#071024;
-      padding:12px 18px;
-      border-radius:10px;
-      border:0;
-      font-weight:600;
-      cursor:pointer;
-      transition:transform .2s, box-shadow .2s;
-    }
-    .btn:hover{
-      transform:translateY(-3px);
-      box-shadow:0 8px 20px rgba(246,184,0,0.4);
-    }
-    .mutebtn{
-      background:transparent;
-      border:1px solid rgba(255,255,255,0.1);
-      color:var(--muted);
-      padding:10px 14px;
-      border-radius:10px;
-      transition:transform .2s, box-shadow .2s;
-      cursor:pointer;
-    }
-    .mutebtn:hover{
-      transform:translateY(-3px);
-      box-shadow:0 6px 15px rgba(255,255,255,0.1);
-    }
-    .small{font-size:13px;color:var(--muted)}
-    .inline{display:flex;gap:8px;flex-wrap:wrap}
-    .right{display:flex;flex-direction:column;gap:12px}
-    .notice{background:var(--glass);padding:10px;border-radius:8px;color:var(--muted);font-size:13px}
-    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
-    .flex{display:flex;gap:12px;align-items:center}
-    @media (max-width:880px){.grid{grid-template-columns:1fr;}.right{order:2}}
-    .success{background:linear-gradient(90deg,#05202d,#0b2230);padding:14px;border-radius:10px;border:1px solid rgba(246,184,0,0.08)}
-    .divider{height:1px;background:rgba(255,255,255,0.05);margin:14px 0}
-    .product{display:flex;gap:12px;align-items:center}
-    .pill{background:rgba(255,255,255,0.08);padding:6px 8px;border-radius:999px;font-size:12px;color:var(--muted)}
-  </style>
+  <title>Dynafrique Solutions — Solar & Bulk Fuel Quotes</title>
+  <meta name="description" content="Get free solar & bulk fuel quotes in Mpumalanga. Dynafrique matches you with vetted local suppliers.">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Analytics / Ads placeholder (replace G-TRACKING-ID) -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRACKING-ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TRACKING-ID');
+  </script>
 </head>
 <body>
-  <main class="wrap">
-    <header>
-      <div class="logo">DQ</div>
-      <div>
-        <h1>Dynafrique Solutions</h1>
-        <p class="lead">Connecting buyers with trusted solar installers and bulk fuel suppliers across Mpumalanga. Fast quotes — local partners.</p>
+  <header class="site-header">
+    <div class="container header-grid">
+      <div class="brand">
+        <div class="logo">DQ</div>
+        <div>
+          <h1>Dynafrique Solutions</h1>
+          <p class="tagline">Connecting buyers with trusted solar installers & bulk fuel suppliers across Mpumalanga.</p>
+        </div>
       </div>
-    </header>
-
-    <div class="grid" style="margin-top:16px">
-      <!-- Left: forms -->
-      <div class="card big">
-        <div class="section-title"><h2>Get a Free Quote</h2><div class="pill">Solar & Fuel</div></div>
-        <p class="small">Choose the service that fits your need. Fill in the form below and we’ll connect you with a verified supplier.</p>
-
-        <div class="divider"></div>
-
-        <!-- tabs -->
-        <div style="display:flex;gap:10px;margin-bottom:14px">
-          <button id="tabSolar" class="mutebtn">☀️ Solar Quote</button>
-          <button id="tabFuel" class="mutebtn">⛽ Bulk Fuel Quote</button>
-        </div>
-
-        <!-- Solar form -->
-        <form name="solar-quote" method="POST" data-netlify="true" id="solarForm">
-          <input type="hidden" name="form-name" value="solar-quote">
-          <label for="s_name">Full Name</label>
-          <input id="s_name" name="name" type="text" required placeholder="Thabo Mokoena">
-
-          <label for="s_phone">Phone / WhatsApp</label>
-          <input id="s_phone" name="phone" type="text" required placeholder="+27 82 555 1234">
-
-          <label for="s_area">Town / Suburb</label>
-          <input id="s_area" name="area" type="text" required placeholder="Sabie">
-
-          <label for="s_bill">Average Monthly Eskom Bill (R)</label>
-          <select id="s_bill" name="bill" required>
-            <option value="">-- Select your range --</option>
-            <option>Under R1,000</option>
-            <option>R1,000 - R2,500</option>
-            <option>R2,500 - R5,000</option>
-            <option>Above R5,000</option>
-          </select>
-
-          <label for="s_owner">Do you own the property?</label>
-          <select id="s_owner" name="owner" required>
-            <option value="">-- Select --</option>
-            <option>Yes</option>
-            <option>No</option>
-          </select>
-
-          <label for="s_notes">Notes (optional)</label>
-          <textarea id="s_notes" name="notes" placeholder="Any details (roof type, batteries, budget)..."></textarea>
-
-          <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
-            <button type="submit" class="btn">Request Solar Quote</button>
-            <a href="https://wa.me/27XXXXXXXXXX?text=Hi%20Dynafrique%20-%20I%27d%20like%20a%20solar%20quote" class="mutebtn" target="_blank">Message on WhatsApp</a>
-          </div>
-        </form>
-
-        <!-- Fuel form -->
-        <form name="fuel-quote" method="POST" data-netlify="true" id="fuelForm" style="display:none;margin-top:14px">
-          <input type="hidden" name="form-name" value="fuel-quote">
-          <label for="f_name">Full Name & Company</label>
-          <input id="f_name" name="name" type="text" required placeholder="Thabo Mokoena — Mokoena Transport">
-
-          <label for="f_phone">Phone / WhatsApp</label>
-          <input id="f_phone" name="phone" type="text" required placeholder="+27 82 555 1234">
-
-          <label for="f_area">Location / Depot</label>
-          <input id="f_area" name="area" type="text" required placeholder="Sabie / Nelspruit">
-
-          <label for="f_type">Type of Fuel</label>
-          <select id="f_type" name="fuel_type" required>
-            <option value="">-- Select --</option>
-            <option>Diesel</option>
-            <option>Petrol</option>
-            <option>Both</option>
-          </select>
-
-          <label for="f_volume">Estimated Monthly Volume (Litres)</label>
-          <input id="f_volume" name="volume" type="number" min="1" required placeholder="e.g., 20000">
-
-          <label for="f_start">Supply Needed</label>
-          <select id="f_start" name="start" required>
-            <option value="">-- Select --</option>
-            <option>Immediate</option>
-            <option>Within 1 month</option>
-            <option>1-3 months</option>
-          </select>
-
-          <label for="f_notes">Notes (optional)</label>
-          <textarea id="f_notes" name="notes" placeholder="Preferred supplier, delivery window, payment terms..."></textarea>
-
-          <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
-            <button type="submit" class="btn">Request Fuel Quote</button>
-            <a href="https://wa.me/27XXXXXXXXXX?text=Hi%20Dynafrique%20-%20I%27m%20interested%20in%20bulk%20fuel" class="mutebtn" target="_blank">Message on WhatsApp</a>
-          </div>
-        </form>
-
+      <div class="header-actions">
+        <a class="btn ghost" href="supplier.html">I'm a Supplier</a>
+        <a class="btn primary" href="quote.html">Get a Free Quote</a>
       </div>
-
-      <!-- Right: quick info -->
-      <aside class="right">
-        <div class="card">
-          <div class="product"><strong>How Dynafrique works</strong></div>
-          <ol style="margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:14px">
-            <li>Buyer requests a quote via form or WhatsApp.</li>
-            <li>Dynafrique verifies & matches with a vetted supplier.</li>
-            <li>Supplier contacts buyer to close the deal. Dynafrique earns a referral fee.</li>
-          </ol>
-        </div>
-
-        <div class="card">
-          <div class="section-title"><h2>Contact</h2></div>
-          <div class="notice">WhatsApp: <a style="color:#fff;text-decoration:none" href="https://wa.me/27XXXXXXXXXX">+27 82 XXX XXXX</a></div>
-          <div style="height:8px"></div>
-          <div class="notice">Email: hello@dynafriquesolutions.com</div>
-        </div>
-
-        <div class="card">
-          <div class="section-title"><h2>Quick Links</h2></div>
-          <div class="inline small">
-            <a class="mutebtn" href="#" onclick="openTab('solar')">Solar</a>
-            <a class="mutebtn" href="#" onclick="openTab('fuel')">Fuel</a>
-            <a class="mutebtn" href="#" onclick="openTab('contact')">Contact</a>
-          </div>
-        </div>
-      </aside>
     </div>
+  </header>
 
-    <footer>
-      <div style="margin-top:14px">© Dynafrique Solutions — Built for fast lead capture.</div>
-    </footer>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h2>Free Quotes. Trusted Suppliers. Fast Matches.</h2>
+          <p>Whether you need rooftop solar or bulk diesel, Dynafrique finds verified local suppliers and delivers quotes — fast.</p>
+          <div class="cta-row">
+            <a class="btn primary large" href="quote.html#solar">Get Solar Quote</a>
+            <a class="btn secondary large" href="quote.html#fuel">Get Fuel Quote</a>
+          </div>
+          <ul class="trust-list">
+            <li>Local installers & wholesalers</li>
+            <li>Finance & delivery options</li>
+            <li>Free, no-obligation quotes</li>
+          </ul>
+        </div>
+        <div class="hero-right">
+          <!-- visual card with solar panel motif -->
+          <div class="panel-card">
+            <div class="panel-visual"> <!-- decorative grid --></div>
+            <div class="panel-text">
+              <strong>Start a quote in 2 minutes</strong>
+              <p>We will match your request to vetted suppliers and get back with a quote.</p>
+              <a class="btn primary" href="quote.html">Request Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how container">
+      <h3>How it Works</h3>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="num">1</div>
+          <h4>Submit Request</h4>
+          <p>Choose Solar or Fuel, answer a few quick questions, and submit.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h4>We Verify & Match</h4>
+          <p>We verify your requirements and match you with local, vetted suppliers.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h4>Supplier Contacts You</h4>
+          <p>Supplier contacts you directly to finalise details. Dynafrique earns a referral fee.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="features container">
+      <h3>Services</h3>
+      <div class="service-cards">
+        <article class="service">
+          <h4>Residential Solar</h4>
+          <p>Rooftop systems, batteries & finance options.</p>
+        </article>
+        <article class="service">
+          <h4>Commercial Solar</h4>
+          <p>Hybrid systems, battery storage, commercial installs.</p>
+        </article>
+        <article class="service">
+          <h4>Bulk Fuel Supply</h4>
+          <p>Diesel & petrol for transport, farms, and mines.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-quick container">
+      <div class="contact-card">
+        <h4>Need help now?</h4>
+        <p>Message us directly on WhatsApp or send an email.</p>
+        <div class="small-cta">
+          <a class="btn ghost" href="https://wa.me/YOUR_WHATSAPP?text=Hi%20Dynafrique%20-%20I%20need%20help%20with%20a%20quote" target="_blank">WhatsApp Us</a>
+          <a class="btn ghost" href="mailto:YOUR_EMAIL">Email Us</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <script>
-    // Simple tab switching
-    const solarForm = document.getElementById('solarForm');
-    const fuelForm = document.getElementById('fuelForm');
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Dynafrique Solutions</strong>
+        <p>Serving Sabie, Thaba Chweu, Nelspruit & the Mpumalanga region.</p>
+      </div>
+      <nav>
+        <a href="quote.html">Get a Quote</a>
+        <a href="supplier.html">Supplier Signup</a>
+        <a href="thank-you.html">Test Thank You</a>
+      </nav>
+    </div>
+    <div class="copyright">© Dynafrique Solutions</div>
+  </footer>
 
-    function openTab(name){
-      if(name==='solar'){solarForm.style.display='block';fuelForm.style.display='none'}
-      if(name==='fuel'){solarForm.style.display='none';fuelForm.style.display='block'}
-      window.scrollTo({top:0,behavior:'smooth'})
-    }
-
-    document.getElementById('tabSolar').addEventListener('click',()=>openTab('solar'))
-    document.getElementById('tabFuel').addEventListener('click',()=>openTab('fuel'))
-  </script>
+  <script src="scripts.js" defer></script>
 </body>
 </html>
 
