@@ -1,50 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Supplier Signup — Dynafrique</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Supplier Registration | Dynafrique Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="mini-header">
-    <div class="container">
-      <a href="index.html" class="brand-mini">Dynafrique</a>
-    </div>
+  <header>
+    <h1>Supplier Registration</h1>
+    <p>Join our network and get matched with real customers</p>
   </header>
 
-  <main class="container form-page">
-    <div class="wizard-card">
-      <h2>Supplier Registration</h2>
-      <p class="small">Register to receive verified quote requests from buyers in Mpumalanga.</p>
+  <main class="container">
+    <form name="supplier-form" method="POST" data-netlify="true" action="thank-you.html">
+      <input type="hidden" name="form-name" value="supplier-form">
 
-      <form name="supplier-signup" method="POST" data-netlify="true" action="thank-you.html">
-        <input type="hidden" name="form-name" value="supplier-signup">
-        <label>Company Name</label>
-        <input type="text" name="company" required>
-        <label>Contact person</label>
-        <input type="text" name="contact_name" required>
-        <label>Phone / WhatsApp</label>
-        <input type="text" name="contact_phone" required>
-        <label>Email</label>
-        <input type="email" name="contact_email" required>
-        <label>Services (check all)</label>
-        <div class="checkbox-row">
-          <label><input type="checkbox" name="services" value="residential_solar"> Residential Solar</label>
-          <label><input type="checkbox" name="services" value="commercial_solar"> Commercial Solar</label>
-          <label><input type="checkbox" name="services" value="bulk_fuel"> Bulk Fuel</label>
-        </div>
-        <label>Service areas (towns)</label>
-        <input type="text" name="areas" placeholder="Sabie, Nelspruit...">
-        <label>Notes (capacity, licenses, payment terms)</label>
-        <textarea name="supplier_notes"></textarea>
+      <label for="company">Company Name</label>
+      <input type="text" name="company" id="company" required />
 
-        <div class="actions">
-          <button type="submit" class="btn primary">Register</button>
-        </div>
-      </form>
-    </div>
+      <label for="service">What service do you offer?</label>
+      <select name="service" id="service" required>
+        <option value="">Select...</option>
+        <option value="Solar">Solar</option>
+        <option value="Fuel">Fuel</option>
+      </select>
+
+      <label for="area">Service Area</label>
+      <input type="text" name="area" id="area" placeholder="e.g. Mpumalanga, Gauteng" required />
+
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required />
+
+      <label for="phone">Phone</label>
+      <input type="tel" name="phone" id="phone" required />
+
+      <button type="submit" class="btn">Register Supplier</button>
+    </form>
   </main>
 
-  <script src="scripts.js" defer></script>
+  <footer>
+    <p>&copy; 2025 Dynafrique Solutions</p>
+  </footer>
 </body>
 </html>
+
