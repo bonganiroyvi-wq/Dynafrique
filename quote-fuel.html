@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fuel Quote | Dynafrique Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Request a Fuel Quote</h1>
+    <p>Connect with trusted fuel suppliers in your area</p>
+  </header>
+
+  <main class="container">
+    <form name="fuel-quote-form" method="POST" data-netlify="true" action="thank-you.html">
+      <input type="hidden" name="form-name" value="fuel-quote-form">
+
+      <section class="card" style="text-align:left;">
+        <label for="name">Full Name</label>
+        <input type="text" name="name" id="name" placeholder="John Doe" required />
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="john@example.com" required />
+
+        <label for="phone">Phone</label>
+        <input type="tel" name="phone" id="phone" placeholder="+27 82 123 4567" required />
+
+        <label for="details">Fuel Details</label>
+        <textarea name="details" id="details" rows="3" placeholder="e.g., Diesel for transport fleet"></textarea>
+
+        <button type="submit" class="btn" style="width:100%; margin-top:1rem;">Submit Fuel Request</button>
+      </section>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Dynafrique Solutions</p>
+  </footer>
+</body>
+</html>
