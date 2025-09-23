@@ -3,75 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Request a Quote | Dynafrique Solutions</title>
+  <title>Get a Quote | Dynafrique Solutions</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="scripts.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
   <header>
-    <h1>Request a Quote</h1>
-    <p>Tell us what you need and we’ll connect you with trusted suppliers</p>
+    <h1>Get a Quote</h1>
+    <p>Quickly request Solar or Fuel services in your area</p>
   </header>
 
   <main class="container">
     <form name="quote-form" method="POST" data-netlify="true" action="thank-you.html">
       <input type="hidden" name="form-name" value="quote-form">
+      <input type="hidden" name="service" id="service-input" value="">
 
-      <!-- Stepper -->
-      <div class="stepper">
-        <div class="step active" id="step-1-label">Service</div>
-        <div class="step" id="step-2-label">Location</div>
-        <div class="step" id="step-3-label">Details</div>
-        <div class="step" id="step-4-label">Contact</div>
-      </div>
+      <!-- Service Selection -->
+      <section class="services-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
 
-      <!-- Step 1 -->
-      <div class="form-step active">
-        <label for="service">Which service do you need?</label>
-        <select name="service" id="service" required>
-          <option value="">Select...</option>
-          <option value="Solar">Solar</option>
-          <option value="Fuel">Fuel</option>
-        </select>
-        <button type="button" class="btn next-step">Next</button>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="form-step">
-        <label for="location">Where are you located?</label>
-        <input type="text" name="location" id="location" placeholder="e.g. Sabie, Mpumalanga" required />
-        <button type="button" class="btn prev-step">Back</button>
-        <button type="button" class="btn next-step">Next</button>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="form-step">
-        <label for="details">Tell us more about your needs</label>
-        <textarea name="details" id="details" rows="4" placeholder="e.g. Need solar for a 3-bedroom house" required></textarea>
-        <button type="button" class="btn prev-step">Back</button>
-        <button type="button" class="btn next-step">Next</button>
-      </div>
-
-      <!-- Step 4 -->
-      <div class="form-step">
-        <label for="name">Your Name</label>
-        <input type="text" name="name" id="name" required />
-
-        <label for="email">Your Email</label>
-        <input type="email" name="email" id="email" required />
-
-        <label for="phone">Your Phone</label>
-        <input type="tel" name="phone" id="phone" required />
-
-        <button type="button" class="btn prev-step">Back</button>
-        <button type="submit" class="btn">Submit Request</button>
-      </div>
-    </form>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Dynafrique Solutions</p>
-  </footer>
-</body>
-</html>
 
