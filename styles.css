@@ -1,43 +1,167 @@
-:root{
-  --bg:#0f1724; --card:#0b1220; --accent:#f6b800; --muted:#9aa4b2;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
-*{box-sizing:border-box}
-body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:linear-gradient(180deg,#071029 0%, #081827 70%);color:#eaf3ff;line-height:1.45}
-.container{max-width:1080px;margin:0 auto;padding:20px}
-.header-grid{display:flex;justify-content:space-between;align-items:center}
-.brand{display:flex;gap:14px;align-items:center}
-.logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#f6b800,#ffde7a);display:flex;align-items:center;justify-content:center;color:#071024;font-weight:700}
-.tagline{color:var(--muted);margin:0}
-.btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;border:0;cursor:pointer}
-.btn.primary{background:var(--accent);color:#071024}
-.btn.secondary{background:#1b2a38;color:#eaf3ff;border:1px solid rgba(255,255,255,0.04)}
-.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--muted)}
-.hero{padding:36px 0}
-.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:center}
-.hero-left h2{font-size:28px;margin:0}
-.cta-row{margin-top:20px;display:flex;gap:12px}
-.panel-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 8px 28px rgba(2,6,23,0.6)}
-.panel-visual{height:140px;background:linear-gradient(90deg,#0f1a2a 1px, transparent 1px), linear-gradient(#0f1a2a 1px, transparent 1px);background-size:40px 40px;border-radius:8px;margin-bottom:12px}
-.how{padding:16px 0}
-.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px}
-.step{background:rgba(255,255,255,0.02);padding:16px;border-radius:10px}
-.num{width:36px;height:36px;background:var(--accent);color:#071024;border-radius:999px;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:8px}
-.features{padding:24px 0}
-.service-cards{display:flex;gap:12px}
-.service{flex:1;padding:14px;border-radius:10px;background:rgba(255,255,255,0.02)}
-.form-page{padding:20px 0}
-.wizard-card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
-.stepper{display:flex;gap:8px;margin-bottom:12px}
-.stepper-step{flex:1;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);text-align:center;font-weight:600}
-.stepper-step.active{background:linear-gradient(90deg,#082b38,#08303b);border:1px solid rgba(246,184,0,0.06)}
-fieldset.step{border:0;padding:0;margin:0;display:none}
-fieldset.step.active{display:block}
-label{display:block;margin:10px 0 6px;font-weight:600;color:#fff}
-input[type=text],input[type=email],input[type=number],select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:inherit}
-textarea{min-height:96px}
-.actions{margin-top:14px;display:flex;gap:10px;justify-content:flex-end}
-.small{color:var(--muted);font-size:13px}
-.mini-header{background:transparent;padding:12px 0}
-.success-card{text-align:center;padding:28px}
-footer.site-footer{padding:18px 0;background:transparent;border-top:1px solid rgba(255,255,255,0.02);margin-top:40px}
-@media (max-width:900px){.hero-grid{grid-template-columns:1fr}.steps-grid{grid-template-columns:1fr}.cta-row{flex-direction:column}}
+
+body {
+  background: #0a192f;
+  color: #ffffff;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Solar panel background grid */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+                    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Layout container */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffdd57;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #ddd;
+}
+
+/* Cards */
+.card {
+  background: rgba(255,255,255,0.08);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+  margin: 1.5rem 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #ffdd57, #ffae00);
+  color: #0a192f;
+  font-weight: bold;
+  padding: 0.9rem 1.8rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 18px rgba(255, 174, 0, 0.6);
+}
+
+/* Forms */
+form {
+  background: rgba(255,255,255,0.08);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+form input, form select, form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.2rem;
+  border: none;
+  border-radius: 0.6rem;
+  outline: none;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+  border: 2px solid #ffdd57;
+  background: #fefefe;
+  color: #000;
+}
+
+/* Stepper (for quote wizard) */
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.step.active {
+  color: #ffdd57;
+  font-weight: bold;
+}
+
+.step::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #444;
+  display: block;
+  margin: 0 auto 0.5rem;
+}
+
+.step.active::before {
+  background: #ffdd57;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 1.5rem;
+  color: #ccc;
+  font-size: 0.9rem;
+  background: rgba(255,255,255,0.05);
+}
+
