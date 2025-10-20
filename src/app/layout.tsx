@@ -3,9 +3,17 @@ import Navbar from "../app/components/Navbar"
 import Footer from "../app/components/Footer";
 
 export const metadata = {
-  title: "Dynafrique Solutions — Empowering Mpumalanga",
-  description: "Dynafrique connects homeowners and businesses to accredited solar, battery and fuel suppliers across Mpumalanga and South Africa."
+  title: "Dynafrique Solutions – Empowering Mpumalanga",
+  description: "Connecting quality leads with accredited suppliers and clean energy financing in South Africa.",
+  openGraph: {
+    title: "Dynafrique Solutions",
+    description: "Empowering Africa through clean energy and smart financing.",
+    url: "https://dynafrique.co.za",
+    siteName: "Dynafrique",
+    images: ["/og-image.jpg"],
+  },
 };
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
